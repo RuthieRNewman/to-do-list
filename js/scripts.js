@@ -2,13 +2,20 @@
 $(document).ready(function() {
   $("form#toDo").submit(function(event){
     event.preventDefault();
-    let item = $("input#userInput").val();
-    let toDoListOutput = ToDoList(item);
+    //let item = $("input#userInput").val();
+    //$('#results').append('<li>' + item + '</li>')
+    
+    $('button').click(function(){
+      let newItem = $('#userInput').val();
+      $('#results').append('<li>' + newItem + '</li>')
+    let toDoListOutput = ToDoList(newItem);
 
-    $("#results").text(item);
-  });
+    //$("#results").text(item);
+    });
+  });  
 });
 
+//function newItem()
 
   //business logic
 function ToDoList() {
