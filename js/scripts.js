@@ -4,18 +4,19 @@ $(document).ready(function() {
     event.preventDefault();
     //let item = $("input#userInput").val();
     //$('#results').append('<li>' + item + '</li>')
-    
+    //$("#results").text(item);
+    let toDoListOutput = ToDoList(newItem);
+
+    function newItem()
     $('button').click(function(){
       let newItem = $('#userInput').val();
       $('#results').append('<li>' + newItem + '</li>')
-    let toDoListOutput = ToDoList(newItem);
-
-    //$("#results").text(item);
+    
     });
   });  
 });
 
-//function newItem()
+
 
   //business logic
 function ToDoList() {
@@ -23,11 +24,22 @@ function ToDoList() {
 }
 
 ToDoList.prototype.addItem = function(item) {
+  item.id= this.assignId();
   this.items.push(item);
 }
 
 ToDoList.prototype.assignId = function() {
   this.currentId += 1;
   return this.currentId;
+}
+
+ToDoList.prototype.deleteItem = function(id) {
+  for (let i=0; i<this.items.length; i++) {
+    if (this.items[i].id == id) {
+      delete this.items[i];
+      return true;
+    }
+  };
+  return false;
 }
 
