@@ -1,4 +1,13 @@
+//user interface logic
+$(document).ready(function() {
+  $("form#toDo").submit(function(event){
+    event.preventDefault();
+    let item = ($("input#itemInput");
+    let toDoListOutput = Item(item);
 
+  }
+
+  //business logic
 function ToDoList() {
   this.list = [];
 }
@@ -8,7 +17,6 @@ function Item(item) {
 }
 
 ToDoList.prototype.addItem = function(item) {
-  let item = $().val();
   this.list.push(item);
 }
 
