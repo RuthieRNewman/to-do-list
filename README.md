@@ -19,7 +19,6 @@ To open the site in a browser from the terminal, run the command: ‘open index.
 
 ### Specs
 
-| :-------------     | :------------- | :------------- |
 | **Program will allow users to name and create a list**| User Input: "Shopping List"| Output: *Shopping list to-do list is created* |
 
 | **Program will allow users to input multiple things to do** | User Input: "Take out trash" | Output: "To Do: Take out trash" |
